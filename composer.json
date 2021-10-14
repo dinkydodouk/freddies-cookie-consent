@@ -41,9 +41,6 @@
         "developerUrl": "https://www.dinkydodo.com",
         "documentationUrl": "https://github.com/dinkydodouk/freddies-cookie-consent/blob/master/README.md",
         "changelogUrl": "https://raw.githubusercontent.com/dinkydodouk/freddies-cookie-consent/master/CHANGELOG.md",
-        "components": {
-            "dodo": "dinkydodouk\\freddiescookieconsent\\services\\DodoService"
-        },
         "class": "dinkydodouk\\freddiescookieconsent\\FreddiesCookieConsent"
     }
 }

@@ -74,8 +74,6 @@ class FreddiesCookieConsent extends Plugin
         parent::init();
         self::$plugin = $this;
 
-        Craft::$app->view->registerTwigExtension(new FreddiesCookieConsentTwigExtension());
-
         // CP Routes
         Event::on(
             UrlManager::class,

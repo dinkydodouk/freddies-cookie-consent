@@ -1,8 +1,6 @@
 # Freddie's Cookie Consent plugin for Craft CMS 3.x
 
-A cookie consent banner that blocks cookies before they are set.
-
-![Screenshot](resources/img/plugin-logo.png)
+A cookie consent banner that blocks cookies before they are set. There are many banners out there that can give you a simple popup message, but this one blocks the Cookies before they start and you can enter your cookies into sections ready to be accepted or blocked. Not bad, huh?
 
 ## Requirements
 
@@ -22,22 +20,24 @@ To install the plugin, follow these instructions.
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Freddie's Cookie Consent.
 
-## Freddie's Cookie Consent Overview
+###MORE INFORMATION COMING SOON!
 
--Insert text here-
+[comment]: <> (## Freddie's Cookie Consent Overview)
 
-## Configuring Freddie's Cookie Consent
+[comment]: <> (-Insert text here-)
 
--Insert text here-
+[comment]: <> (## Configuring Freddie's Cookie Consent)
 
-## Using Freddie's Cookie Consent
+[comment]: <> (-Insert text here-)
 
--Insert text here-
+[comment]: <> (## Using Freddie's Cookie Consent)
 
-## Freddie's Cookie Consent Roadmap
+[comment]: <> (-Insert text here-)
 
-Some things to do, and ideas for potential features:
+[comment]: <> (## Freddie's Cookie Consent Roadmap)
 
-* Release it
+[comment]: <> (Some things to do, and ideas for potential features:)
+
+[comment]: <> (* Release it)
 
 Brought to you by [Freddie Dodo](https://www.dinkydodo.com)
