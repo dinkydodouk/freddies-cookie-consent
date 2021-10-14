@@ -2,7 +2,7 @@
     "name": "dinkydodouk/freddies-cookie-consent",
     "description": "A cookie consent banner that blocks cookies before they are set.",
     "type": "craft-plugin",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "keywords": [
         "craft",
         "cms",
