@@ -47,7 +47,7 @@ function buildPopup(settings, sections) {
 
     html += '</div>';
     html += '<div class="fcc-buttons">';
-    html += '<button type="submit" id="acceptCookies" class="fcc-primary-btn" style="background-color: #' + settings.allowBgColour + '">' + settings.allowBtnText + '</button>';
+    html += '<button type="submit" id="acceptCookies" class="fcc-primary-btn" style="background-color: #' + settings.allowBgColour + '; color: #' + settings.allowTextColour + '">' + settings.allowBtnText + '</button>';
 
     let moreBtn = "";
     if (settings.privacyCookieEntry !== "" && settings.privacyCookieUrl === "") {
