@@ -1,0 +1,49 @@
+{
+    "name": "dinkydodouk/freddies-cookie-consent",
+    "description": "A cookie consent banner that blocks cookies before they are set.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "freddies cookie consent"
+    ],
+    "support": {
+        "docs": "https://github.com/dinkydodouk/freddies-cookie-consent/blob/master/README.md",
+        "issues": "https://github.com/dinkydodouk/freddies-cookie-consent/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freddie Dodo",
+            "homepage": "https://www.dinkydodo.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "codeception/codeception": "^3.0",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "dinkydodouk\\freddiescookieconsent\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Freddie's Cookie Consent",
+        "handle": "freddies-cookie-consent",
+        "developer": "Freddie Dodo",
+        "developerUrl": "https://www.dinkydodo.com",
+        "documentationUrl": "https://github.com/dinkydodouk/freddies-cookie-consent/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/dinkydodouk/freddies-cookie-consent/master/CHANGELOG.md",
+        "components": {
+            "dodo": "dinkydodouk\\freddiescookieconsent\\services\\DodoService"
+        },
+        "class": "dinkydodouk\\freddiescookieconsent\\FreddiesCookieConsent"
+    }
+}

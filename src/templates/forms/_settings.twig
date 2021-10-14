@@ -1,0 +1,228 @@
+{% extends '_layouts/cp' %}
+{% import '_includes/forms' as forms %}
+
+{% set title = 'Freddie\'s Cookie Settings'|t('freddies-cookie-consent') %}
+{% set fullPageForm = true %}
+
+{% block content %}
+    {{ actionInput('freddies-cookie-consent/settings/save') }}
+    {{ redirectInput('freddies-cookie-consent/settings') }}
+
+    <div id="general">
+        {{ forms.lightswitchField({
+            first: true,
+            label: 'Activate Plugin'|t('freddies-cookie-consent'),
+            instructions: 'Enable the Cookies plugin'|t('freddies-cookie-consent'),
+            id: 'activatePlugin',
+            name: 'activatePlugin',
+            required: false,
+            on: (settings is defined and settings.activatePlugin == 1) ? true : false,
+        }) }}
+        {{ forms.textField({
+            label: 'Cookie Banner Title'|t('freddies-cookie-consent'),
+            instructions: 'Enter a title for the Cookie Banner'|t('freddies-cookie-consent'),
+            id: 'cookieBannerTitle',
+            name: 'cookieBannerTitle',
+            value: (settings is not defined or settings.cookieBannerTitle is null) ? 'Cookie Consent'|t('freddies-cookie-consent') : settings.cookieBannerTitle,
+            required: true
+        }) }}
+        {{ forms.textField({
+            label: 'Cookie Banner Content'|t('freddies-cookie-consent'),
+            instructions: 'Enter some content for the Cookie Banner'|t('freddies-cookie-consent'),
+            id: 'cookieBannerContent',
+            name: 'cookieBannerContent',
+            value: (settings is not defined or settings.cookieBannerContent is null) ? '' : settings.cookieBannerContent,
+            required: true
+        }) }}
+        <hr>
+        {{ forms.elementselectField({
+            label: 'Entry Link to Privacy/Cookie Policy'|t('freddies-cookie-consent'),
+            instructions: 'Select an entry to link the Privacy/Cookie Policy button'|t('freddies-cookie-consent'),
+            id: 'privacyCookieEntry',
+            name: 'privacyCookieEntry',
+            showSiteMenu: 'auto',
+            elementType: 'craft\\elements\\Entry',
+            selectionLabel: 'Select an entry'|t('freddies-cookie-consent'),
+            limit: 1,
+            required: false
+        }) }}
+        {{ forms.textField({
+            label: 'URL Link to Privacy/Cookie Policy'|t('freddies-cookie-consent'),
+            instructions: 'Enter a URL to link the Privacy/Cookie Policy button'|t('freddies-cookie-consent'),
+            id: 'privacyCookieUrl',
+            name: 'privacyCookieUrl',
+            required: false,
+            value: (settings is not defined or settings.privacyCookieUrl is null) ? '' : settings.privacyCookieUrl
+        }) }}
+    </div>
+    <div id="appearance" class="hidden">
+        {{ forms.lightswitchField({
+            label: 'Remove Plugin CSS'|t('freddies-cookie-consent'),
+            instructions: 'If you want to use your own CSS, enable Remove Plugin CSS',
+            id: 'removeCss',
+            name: 'removeCss',
+            required: false,
+            on: (settings is defined and settings.removeCss == 1) ? true : false,
+        }) }}
+        <hr>
+        {{ forms.colorField({
+            label: 'Background Colour'|t('freddies-cookie-consent'),
+            instructions: 'Choose your background colour.',
+            id: 'backgroundColour',
+            name: 'backgroundColour',
+            value: (settings is not defined or settings.backgroundColour is null) ? '#FFFFFF' : settings.backgroundColour,
+            required: false
+        }) }}
+        {{ forms.colorField({
+            label: 'Header Text Colour'|t('freddies-cookie-consent'),
+            instructions: 'Choose your header text colour.',
+            id: 'headerColour',
+            name: 'headerColour',
+            value: (settings is not defined or settings.headerColour is null) ? '#000000' : settings.headerColour,
+            required: false
+        }) }}
+        {{ forms.colorField({
+            label: 'Content Text Colour'|t('freddies-cookie-consent'),
+            instructions: 'Choose your content text colour.',
+            id: 'textColour',
+            name: 'textColour',
+            value: (settings is not defined or settings.textColour is null) ? '#000000' : settings.textColour,
+            required: false
+        }) }}
+    </div>
+    <div id="buttons" class="hidden">
+        <h2>Allow Cookies Button</h2>
+        {{ forms.textField({
+            label: 'Allow Button Text'|t('freddies-cookie-consent'),
+            instructions: 'Change the Allow Cookies Button Text'|t('freddies-cookie-consent'),
+            id: 'allowBtnText',
+            name: 'allowBtnText',
+            value: (settings is not defined or settings.allowBtnText is null) ? 'Allow Cookies'|t('freddies-cookie-consent') : settings.allowBtnText,
+            required: true
+        }) }}
+        {{ forms.colorField({
+            label: 'Allow Button Background Colour'|t('freddies-cookie-consent'),
+            instructions: 'Choose your allow button background colour.',
+            id: 'allowBgColour',
+            name: 'allowBgColour',
+            value: (settings is not defined or settings.allowBgColour is null) ? '#000000' : settings.allowBgColour,
+            required: false
+        }) }}
+        {{ forms.colorField({
+            label: 'Allow Button Text Colour'|t('freddies-cookie-consent'),
+            instructions: 'Choose your allow button text colour.',
+            id: 'allowTextColour',
+            name: 'allowTextColour',
+            value: (settings is not defined or settings.allowTextColour is null) ? '#FFFFFF' : settings.allowTextColour,
+            required: false
+        }) }}
+        <hr>
+        <h2>Secondary Cookies Button</h2>
+        {{ forms.textField({
+            label: 'Information Button Text'|t('freddies-cookie-consent'),
+            instructions: 'Change the Information Button Text'|t('freddies-cookie-consent'),
+            id: 'secondaryBtnText',
+            name: 'secondaryBtnText',
+            value: (settings is not defined or settings.secondaryBtnText is null) ? 'More Info'|t('freddies-cookie-consent') : settings.secondaryBtnText,
+            required: true
+        }) }}
+        {{ forms.colorField({
+            label: 'More Information Button Background Colour'|t('freddies-cookie-consent'),
+            instructions: 'Choose your more info button background colour.',
+            id: 'secondaryBgColour',
+            name: 'secondaryBgColour',
+            value: (settings is not defined or settings.secondaryBgColour is null) ? '#FF0000' : settings.secondaryBgColour,
+            required: false
+        }) }}
+        {{ forms.colorField({
+            label: 'More Information Button Text Colour'|t('freddies-cookie-consent'),
+            instructions: 'Choose your more info button text colour.',
+            id: 'secondaryTextColour',
+            name: 'secondaryTextColour',
+            value: (settings is not defined or settings.secondaryTextColour is null) ? '#FFFFFF' : settings.secondaryTextColour,
+            required: false
+        }) }}
+    </div>
+    <div id="cookiesSections" class="hidden">
+        {{ forms.textField({
+            label: 'Cookie Duration (In days)'|t('freddies-cookie-consent'),
+            instructions: 'Set the amount of time (in days) that a cookie should last per user'|t('freddies-cookie-consent'),
+            type: 'number',
+            name: 'cookieDuration',
+            id: 'cookieDuration',
+            value: (settings is not defined or settings.cookieDuration is null) ? 30 : settings.cookieDuration,
+            required: true
+        }) }}
+        {{ forms.editableTableField({
+            label: 'Enter Cookie Sections'|t('freddies-cookie-consent'),
+            instructions: 'These are the sections that a user will agree to.'|t('freddies-cookie-consent'),
+            name: 'cookieSections',
+            id: 'cookieSections',
+            required: true,
+            rows: sections,
+            cols: {
+                section_name: {
+                    heading: 'Name',
+                    type: 'text',
+                    info: '' |t('freddies-cookie-consent'),
+                },
+                section_handle: {
+                    heading: 'Handle',
+                    type: 'text',
+                    info: '' |t('freddies-cookie-consent'),
+                },
+                section_on: {
+                    heading: 'On',
+                    type: 'lightswitch',
+                    info: '' |t('freddies-cookie-consent'),
+                },
+                section_required: {
+                    heading: 'Required',
+                    type: 'lightswitch',
+                    info: '' |t('freddies-cookie-consent'),
+                },
+            },
+        }) }}
+    </div>
+    <div id="cookies" class="hidden">
+        {% set sectionsDropdown = [] %}
+        {% for row in sections %}
+            {% set sectionsDropdown = sectionsDropdown|merge([{
+                value: row.id,
+                label: row.section_name
+            }]) %}
+        {% endfor %}
+        {{ forms.editableTableField({
+            label: 'Enter Cookies Used On Your Site'|t('freddies-cookie-consent'),
+            instructions: ''|t('freddies-cookie-consent'),
+            name: 'cookiesUsed',
+            id: 'cookiesUsed',
+            required: true,
+            rows: cookies,
+            cols: {
+                cookie_name: {
+                    heading: 'Cookie Name',
+                    type: 'text',
+                    info: '' |t('freddies-cookie-consent'),
+                },
+                cookie_expiry: {
+                    heading: 'Cookie Expiry',
+                    type: 'text',
+                    info: '' |t('freddies-cookie-consent'),
+                },
+                cookie_description: {
+                    heading: 'Cookie Description',
+                    type: 'text',
+                    info: '' |t('freddies-cookie-consent'),
+                },
+                section_id: {
+                    heading: 'Cookie Section',
+                    type: 'select',
+                    options: sectionsDropdown,
+                    info: '' |t('freddies-cookie-consent'),
+                },
+            },
+        }) }}
+    </div>
+    {# <div id="userdata" class="hidden"></div> #}
+{% endblock %}

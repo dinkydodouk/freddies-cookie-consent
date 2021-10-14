@@ -1,0 +1,55 @@
+/**
+ * Freddie's Cookie Consent plugin for Craft CMS
+ *
+ * Freddie's Cookie Consent CSS
+ *
+ * @author    Freddie Dodo
+ * @copyright Copyright (c) 2021 Freddie Dodo
+ * @link      https://www.dinkydodo.com
+ * @package   FreddiesCookieConsent
+ * @since     1.0.0
+ */
+
+#freddies-consent-bar {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    max-width: 400px;
+    padding: 2rem;
+    box-shadow: 0px 0px 5px #222222;
+}
+
+#freddies-consent-bar.active {
+    display: block;
+}
+
+#freddies-consent-bar h3 {
+    font-weight: bold;
+}
+
+#freddies-consent-bar .fcc-options {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+    margin-bottom: 1rem;
+}
+
+#freddies-consent-bar .fcc-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+
+#freddies-consent-bar .fcc-buttons .fcc-primary-btn,
+#freddies-consent-bar .fcc-buttons .fcc-secondary-btn {
+    width: 100%;
+    display: block;
+    border: none;
+    padding: 0.5rem 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* DO SOME RESPONSIVE WORK */
