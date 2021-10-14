@@ -43,7 +43,7 @@ class FreddiesCookieConsent extends Plugin
     /**
      * @var FreddiesCookieConsent
      */
-    public static $instance;
+    public static $plugin;
 
     // Public Properties
     // =========================================================================
@@ -72,7 +72,7 @@ class FreddiesCookieConsent extends Plugin
     public function init()
     {
         parent::init();
-        self::$instance = $this;
+        self::$plugin = $this;
 
         Craft::$app->view->registerTwigExtension(new FreddiesCookieConsentTwigExtension());
 
@@ -87,7 +87,6 @@ class FreddiesCookieConsent extends Plugin
                         'freddies-cookie-consent' => 'freddies-cookie-consent/dodo',
                         'freddies-cookie-consent/settings' => 'freddies-cookie-consent/settings',
                         'freddies-cookie-consent/settings/save' => 'freddies-cookie-consent/settings/save',
-                        // 'freddies-cookie-consent/<siteHandle:{handle}>' => 'freddies-cookie-consent/dodo/settings',
                     ]
                 );
             }
